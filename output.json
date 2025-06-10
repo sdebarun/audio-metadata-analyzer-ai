@@ -1,57 +1,34 @@
 {
       "basic": {
-            "tags": {
-                  "album": [
-                        "Stree 2"
-                  ],
-                  "composer": [
-                        "Sachin-Jigar, Madhubanti Bagchi, Divya Kumar, Amitabh Bhattacharya"
-                  ],
-                  "copyright": [
-                        "SaReGaMA India Ltd"
-                  ],
-                  "title": [
-                        "Aaj Ki Raat"
-                  ],
-                  "artist": [
-                        "Amitabh Bhattacharya, Sachin-Jigar, Madhubanti Bagchi, Divya Kumar"
-                  ],
-                  "genre": [
-                        "Aaj Ki Raat (From \"Stree 2\")"
-                  ],
-                  "date": [
-                        "2024"
-                  ]
-            },
-            "info": "<mutagen.mp3.MPEGInfo object at 0x0000011787F9B070>"
+            "tags": {},
+            "info": "N/A"
       },
       "technical": {
             "programs": [],
             "stream_groups": [],
             "streams": [
                   {
-                        "sample_rate": "44100",
+                        "sample_rate": "48000",
                         "channels": 2,
-                        "bit_rate": "128000"
-                  },
-                  {}
+                        "bit_rate": "64000"
+                  }
             ],
             "format": {
-                  "duration": "228.649796"
+                  "duration": "187.848250"
             }
       },
-      "cover_art_path": "samples/sample-128KB.mp3_cover.jpg",
+      "cover_art_path": null,
       "genre_mood_analysis": {
             "tempo": [
-                  117.45383522727273
+                  151.99908088235293
             ],
-            "mood": "calm",
+            "mood": "energetic",
             "genre_estimate": "acoustic",
-            "spectral_centroid_mean": 2045.8411608048357,
-            "zero_crossing_rate_mean": 0.07191772398953997
+            "spectral_centroid_mean": 2004.9864583669373,
+            "zero_crossing_rate_mean": 0.08583682594252164
       },
       "malware_scan": {
             "status": "File not found in VirusTotal database."
       },
-      "transcription": "\u0925\u094b\u0921\u093c\u0940 \u092b\u0941\u0930\u0938\u0924 \u092d\u0940 \u092e\u0947\u0930\u0940 \u091c\u093e\u0915 \u092d\u0940 \u092c\u093e\u0939\u094b\u0902 \u0915\u094b \u0926\u0940\u091c\u093f\u092f\u0947"
+      "language_detected": "Bengali"
 }

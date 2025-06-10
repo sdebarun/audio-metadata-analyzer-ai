@@ -7,6 +7,7 @@ import numpy as np
 import librosa
 import hashlib
 import requests
+import pycountry
 
 # Optional: Use whisper for transcript if installed
 try:
@@ -18,6 +19,13 @@ except ImportError:
 # Optional: Add your VirusTotal API key here
 VT_API_KEY = os.getenv("VT_API_KEY", "d914951e55d48368cb89361495b988b26868c215302117d2ec2344529214c935")
 
+#converting iso code to full name language  (for whisper laguage output)
+def get_language_name(iso639_1_code):
+    try:
+        language = pycountry.languages.get(alpha_2=iso639_1_code)
+        return language.name
+    except AttributeError:
+        return "Language name not found"
 
 def extract_basic_metadata(file_path):
     audio = MutagenFile(file_path, easy=True)
@@ -25,8 +33,6 @@ def extract_basic_metadata(file_path):
         "tags": dict(audio.tags) if audio.tags else {},
         "info": str(audio.info) if audio else "N/A"
     }
-    print('extract_basic_metadata done');
-    print(audio)
     return metadata
 
 
@@ -116,12 +122,13 @@ def extract_all_metadata(file_path):
     }
 
     if WHISPER_AVAILABLE:
-        metadata["transcription"] = transcribe_audio(file_path)
-        metadata['language_detected'] = metadata["transcription"].get("language")
+        # metadata["transcription"] = transcribe_audio(file_path) #! ASCII ISSUE - need to resolve (ensure_ascii = false throws erorr of undefined unicode)
+        metadata['language_detected'] =get_language_name(transcribe_audio(file_path).get("language"))
     else:
         metadata["transcription"] = "Whisper not available. Install with: pip install openai-whisper"
 
     return metadata
+
 # numpy nd array cleaner mostly
 def clean_for_json(obj):
     if isinstance(obj, np.ndarray):
@@ -136,12 +143,10 @@ def clean_for_json(obj):
         return [clean_for_json(i) for i in obj]
     return obj
 
-
-
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
-        print("Usage: python extract_metadata.py <audiofile>")
+        print("No argument is suplied Exiting ...", end="\n")
         sys.exit(1)
 
     audio_file = sys.argv[1]
@@ -151,14 +156,14 @@ if __name__ == "__main__":
         sys.exit(1)
 
     metadata = extract_all_metadata(audio_file)
-    print(json.dumps(clean_for_json(metadata), indent=4, ensure_ascii=False))
+    print(json.dumps(clean_for_json(metadata), indent=4))
 
 
     # the json file where the output must be stored
 
     out_file = open("output.json", "w")
 
-    json.dump(clean_for_json(metadata), out_file, indent = 6, ensure_ascii=False)
+    json.dump(clean_for_json(metadata), out_file, indent = 6)
 
     out_file.close()    
 
