@@ -9,14 +9,14 @@ import hashlib
 import requests
 import pycountry
 
-# Optional: Use whisper for transcript if installed
+# lyrics and language detection (if paid scheme then optional)
 try:
     import whisper
     WHISPER_AVAILABLE = True
 except ImportError:
     WHISPER_AVAILABLE = False
 
-# Optional: Add your VirusTotal API key here
+# Optional: Add your VirusTotal API key here #todo - need opensource alternatives
 VT_API_KEY = os.getenv("VT_API_KEY", "d914951e55d48368cb89361495b988b26868c215302117d2ec2344529214c935")
 
 #converting iso code to full name language  (for whisper laguage output)
@@ -26,6 +26,7 @@ def get_language_name(iso639_1_code):
         return language.name
     except AttributeError:
         return "Language name not found"
+
 
 def extract_basic_metadata(file_path):
     audio = MutagenFile(file_path, easy=True)
@@ -64,7 +65,7 @@ def transcribe_audio(file_path):
     model = whisper.load_model("base")
     result = model.transcribe(file_path)
     return {
-        "text": result.get("text"),
+        # "text": result.get("text"), #! ASCII ISSUE - need to resolve (ensure_ascii = false throws erorr of undefined unicode)
         "language": result.get("language")  # ISO 639-1 language code (e.g., 'hi' for Hindi)
     }
 
@@ -73,7 +74,7 @@ def detect_genre_mood(file_path):
     try:
         y, sr = librosa.load(file_path)
         tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
-        chroma = librosa.feature.chroma_stft(y=y, sr=sr)
+        # chroma = librosa.feature.chroma_stft(y=y, sr=sr)
         spectral_centroid = librosa.feature.spectral_centroid(y=y, sr=sr)
         zcr = librosa.feature.zero_crossing_rate(y)
 
@@ -84,6 +85,7 @@ def detect_genre_mood(file_path):
             "tempo": tempo,
             "mood": mood,
             "genre_estimate": genre,
+            # "chromagrams" : chroma,
             "spectral_centroid_mean": np.mean(spectral_centroid).item(),
             "zero_crossing_rate_mean": np.mean(zcr).item()
         }
@@ -122,7 +124,7 @@ def extract_all_metadata(file_path):
     }
 
     if WHISPER_AVAILABLE:
-        # metadata["transcription"] = transcribe_audio(file_path) #! ASCII ISSUE - need to resolve (ensure_ascii = false throws erorr of undefined unicode)
+        metadata["transcription"] = transcribe_audio(file_path) 
         metadata['language_detected'] =get_language_name(transcribe_audio(file_path).get("language"))
     else:
         metadata["transcription"] = "Whisper not available. Install with: pip install openai-whisper"
