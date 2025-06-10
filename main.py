@@ -17,7 +17,7 @@ except ImportError:
     WHISPER_AVAILABLE = False
 
 # Optional: Add your VirusTotal API key here #todo - need opensource alternatives
-VT_API_KEY = os.getenv("VT_API_KEY", "d914951e55d48368cb89361495b988b26868c215302117d2ec2344529214c935")
+VT_API_KEY = os.getenv("VT_API_KEY", "")
 
 #converting iso code to full name language  (for whisper laguage output)
 def get_language_name(iso639_1_code):
