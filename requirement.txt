@@ -1,0 +1,7 @@
+mutagen
+eyed3
+librosa
+openai-whisper
+requests
+numpy
+ffmpeg-python
