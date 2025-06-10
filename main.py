@@ -25,6 +25,8 @@ def extract_basic_metadata(file_path):
         "tags": dict(audio.tags) if audio.tags else {},
         "info": str(audio.info) if audio else "N/A"
     }
+    print('extract_basic_metadata done');
+    print(audio)
     return metadata
 
 
@@ -55,7 +57,10 @@ def transcribe_audio(file_path):
         return "Whisper not installed"
     model = whisper.load_model("base")
     result = model.transcribe(file_path)
-    return result.get("text")
+    return {
+        "text": result.get("text"),
+        "language": result.get("language")  # ISO 639-1 language code (e.g., 'hi' for Hindi)
+    }
 
 
 def detect_genre_mood(file_path):
@@ -112,10 +117,25 @@ def extract_all_metadata(file_path):
 
     if WHISPER_AVAILABLE:
         metadata["transcription"] = transcribe_audio(file_path)
+        metadata['language_detected'] = metadata["transcription"].get("language")
     else:
         metadata["transcription"] = "Whisper not available. Install with: pip install openai-whisper"
 
     return metadata
+# numpy nd array cleaner mostly
+def clean_for_json(obj):
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    if isinstance(obj, (np.float32, np.float64)):
+        return float(obj)
+    if isinstance(obj, (np.int32, np.int64)):
+        return int(obj)
+    if isinstance(obj, dict):
+        return {k: clean_for_json(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [clean_for_json(i) for i in obj]
+    return obj
+
 
 
 if __name__ == "__main__":
@@ -131,4 +151,14 @@ if __name__ == "__main__":
         sys.exit(1)
 
     metadata = extract_all_metadata(audio_file)
-    print(json.dumps(metadata, indent=4))
+    print(json.dumps(clean_for_json(metadata), indent=4, ensure_ascii=False))
+
+
+    # the json file where the output must be stored
+
+    out_file = open("output.json", "w")
+
+    json.dump(clean_for_json(metadata), out_file, indent = 6, ensure_ascii=False)
+
+    out_file.close()    
+
