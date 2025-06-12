@@ -1,29 +1,7 @@
 {
       "basic": {
-            "tags": {
-                  "album": [
-                        "Stree 2"
-                  ],
-                  "composer": [
-                        "Sachin-Jigar, Madhubanti Bagchi, Divya Kumar, Amitabh Bhattacharya"
-                  ],
-                  "copyright": [
-                        "SaReGaMA India Ltd"
-                  ],
-                  "title": [
-                        "Aaj Ki Raat"
-                  ],
-                  "artist": [
-                        "Amitabh Bhattacharya, Sachin-Jigar, Madhubanti Bagchi, Divya Kumar"
-                  ],
-                  "genre": [
-                        "Aaj Ki Raat (From \"Stree 2\")"
-                  ],
-                  "date": [
-                        "2024"
-                  ]
-            },
-            "info": "<mutagen.mp3.MPEGInfo object at 0x000002367751A610>"
+            "tags": {},
+            "info": "N/A"
       },
       "technical": {
             "programs": [],
@@ -32,29 +10,28 @@
                   {
                         "sample_rate": "44100",
                         "channels": 2,
-                        "bit_rate": "128000"
-                  },
-                  {}
+                        "bit_rate": "192000"
+                  }
             ],
             "format": {
-                  "duration": "228.649796"
+                  "duration": "378.070204"
             }
       },
-      "cover_art_path": "samples/hind1.mp3_cover.jpg",
+      "cover_art_path": null,
       "genre_mood_analysis": {
             "tempo": [
-                  117.45383522727273
+                  107.666015625
             ],
             "mood": "calm",
-            "genre_estimate": "acoustic",
-            "spectral_centroid_mean": 2045.8411608048357,
-            "zero_crossing_rate_mean": 0.07191772398953997
+            "genre_estimate": "electronic",
+            "spectral_centroid_mean": 2195.490250396925,
+            "zero_crossing_rate_mean": 0.10280827394707345
       },
       "malware_scan": {
             "status": "VirusTotal API key not set."
       },
       "transcription": {
-            "language": "hi"
+            "language": "en"
       },
-      "language_detected": "Hindi"
+      "language_detected": "English"
 }
