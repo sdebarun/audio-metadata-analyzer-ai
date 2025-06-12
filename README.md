@@ -13,3 +13,8 @@ macOS: brew install ffmpeg
 Ubuntu/Debian: sudo apt install ffmpeg
 
 Windows: Download from https://ffmpeg.org/download.html, and add it to your system PATH.
+--------
+#NB 
+----
+There is an issue with openai-whisper package in python 3.13 version. so we are installing it directly from git. 
+you can see the requirement txt file to know more.
