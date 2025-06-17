@@ -8,6 +8,9 @@ import librosa
 import hashlib
 import requests
 import pycountry
+import certifi
+
+os.environ["SSL_CERT_FILE"] = certifi.where() #~ for certificate issue. Should work cross-platform on OS
 
 # lyrics and language detection (if paid scheme then optional)
 try:
@@ -102,7 +105,7 @@ def check_malware(file_path):
 
     headers = {"x-apikey": VT_API_KEY}
     url = f"https://www.virustotal.com/api/v3/files/{file_hash}"
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, verify=False)
 
     if response.status_code == 200:
         data = response.json()
