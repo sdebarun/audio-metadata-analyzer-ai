@@ -16,3 +16,11 @@ If not already installed,
 
 **NB :** There is an issue with openai-whisper package in python 3.13 version. so we are installing it directly from git. 
 you can see the requirement txt file to know more.
+
+**How to run it**
+------------------
+1. go to the project directory
+2. if you are in linux or mac activate the virtual environment by `source bin/activate` 
+    if windows use `bin/activate`
+3. then run python main.py `<file name>`
+4. to deactivate the virtual environment  `deactivate`   
