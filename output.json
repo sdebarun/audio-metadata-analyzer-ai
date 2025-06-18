@@ -1,32 +1,11 @@
 {
       "basic": {
             "tags": {
-                  "album": [
-                        "Mitron"
-                  ],
-                  "composer": [
-                        "Lijo George, Dj Chetas"
-                  ],
-                  "copyright": [
-                        "Sony Music Entertainment India Pvt. Ltd."
-                  ],
-                  "title": [
-                        "Kamariya"
-                  ],
-                  "artist": [
-                        "Lijo George, Dj Chetas, Darshan Raval"
-                  ],
-                  "albumartist": [
-                        "Lijo George, Dj Chetas, Darshan Raval"
-                  ],
-                  "genre": [
-                        "Bollywood"
-                  ],
                   "date": [
                         "2018"
                   ]
             },
-            "info": "<mutagen.mp3.MPEGInfo object at 0x107453740>"
+            "info": "<mutagen.mp3.MPEGInfo object at 0x107420830>"
       },
       "technical": {
             "programs": [],
@@ -35,29 +14,28 @@
                   {
                         "sample_rate": "44100",
                         "channels": 2,
-                        "bit_rate": "128000"
-                  },
-                  {}
+                        "bit_rate": "139529"
+                  }
             ],
             "format": {
-                  "duration": "251.689796"
+                  "duration": "42.057143"
             }
       },
-      "cover_art_path": "samples/hindi1.mp3_cover.jpg",
+      "cover_art_path": null,
       "genre_mood_analysis": {
             "tempo": [
-                  123.046875
+                  95.703125
             ],
-            "mood": "energetic",
-            "genre_estimate": "electronic",
-            "spectral_centroid_mean": 2776.2267496662744,
-            "zero_crossing_rate_mean": 0.13285899010517577
+            "mood": "calm",
+            "genre_estimate": "acoustic",
+            "spectral_centroid_mean": 442.25339023021206,
+            "zero_crossing_rate_mean": 0.03420558529005525
       },
       "malware_scan": {
             "status": "VirusTotal API key not set."
       },
       "transcription": {
-            "language": "en"
+            "language": "ro"
       },
-      "language_detected": "English"
+      "language_detected": "Romanian"
 }

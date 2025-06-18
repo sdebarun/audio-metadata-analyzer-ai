@@ -65,7 +65,7 @@ def extract_technical_details(file_path):
 def transcribe_audio(file_path):
     if not WHISPER_AVAILABLE:
         return "Whisper not installed"
-    model = whisper.load_model("base")
+    model = whisper.load_model("tiny")
     result = model.transcribe(file_path)
     return {
         # "text": result.get("text"), #! ASCII ISSUE - need to resolve (ensure_ascii = false throws erorr of undefined unicode)
@@ -151,11 +151,11 @@ def clean_for_json(obj):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
-        print("No argument is suplied Exiting ...", end="\n")
+        print(json.dumps('No Argument supplied. Exiting...', indent=4))
         sys.exit(1)
 
     audio_file = sys.argv[1]
-    print(audio_file)
+    # print(audio_file)
     if not os.path.exists(audio_file):
         print("File does not exist.")
         sys.exit(1)
@@ -166,9 +166,9 @@ if __name__ == "__main__":
 
     # the json file where the output must be stored
 
-    out_file = open("output.json", "w")
+    # out_file = open("output.json", "w")
 
-    json.dump(clean_for_json(metadata), out_file, indent = 6)
+    # print(json.dump(clean_for_json(metadata), out_file, indent = 6))
 
-    out_file.close()    
+    # out_file.close()    
 
