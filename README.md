@@ -81,26 +81,6 @@ sudo apt install ffmpeg
 
 ---
 
-## 📊 Project Structure
-
-```bash
-project/
-├── extractor.py        # Main metadata + AI enrichment script
-├── utils/
-│   ├── mood_model.py   # Mood/genre classification
-│   └── language_utils.py
-├── audio/
-│   └── input_files     # Upload audio files here
-├── output/
-│   └── enriched_files  # Processed output files
-├── api/
-│   └── laravel_integration.md # API notes for Laravel
-├── requirements.txt
-└── README.md
-```
-
----
-
 ## 🎓 Academic Relevance
 
 This project can be submitted as a **capstone or thesis project** in the following fields:
@@ -128,7 +108,7 @@ This project can be submitted as a **capstone or thesis project** in the followi
 
 ---
 
-## 🚜 Get Started
+## 🚜 Get Started Quickly (Skipping the above content)
 
 1. Activate the Virtual env by - source bin/activate inside the project directory
 2. run `pip install -r requirement.txt` - this will install all the libraries
