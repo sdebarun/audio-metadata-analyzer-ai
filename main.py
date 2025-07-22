@@ -68,7 +68,7 @@ def transcribe_audio(file_path):
     model = whisper.load_model("tiny")
     result = model.transcribe(file_path)
     return {
-        # "text": result.get("text"), #! ASCII ISSUE - need to resolve (ensure_ascii = false throws erorr of undefined unicode)
+        "text": result.get("text"), #! ASCII ISSUE - need to resolve (ensure_ascii = false throws error of undefined unicode)
         "language": result.get("language")  # ISO 639-1 language code (e.g., 'hi' for Hindi)
     }
 

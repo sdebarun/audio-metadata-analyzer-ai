@@ -1,6 +1,11 @@
 # Audio Metadata Analyzer & Enricher with AI
 
-This project is a cross-platform, AI-powered audio metadata analysis and enrichment tool. It extracts and enhances metadata from audio files, including title, artist, genre, language, transcription, and mood detection. The system also ensures file integrity using virus scanning and provides multilingual support.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Platform](https://img.shields.io/badge/platform-Mac%20%7C%20Windows%20%7C%20Linux-informational)
+![Whisper](https://img.shields.io/badge/AI-Whisper-orange)
+
+This project is a cross-platform, AI-powered audio metadata analysis and enrichment tool. It extracts and enhances metadata from audio files, including title, artist, genre, language, transcription, and basic integrity checks.
 
 ## 📄 Project Overview
 
@@ -9,14 +14,13 @@ The project is designed to:
 * Extract technical metadata (duration, bitrate, sample rate, etc.)
 * Detect and embed descriptive metadata (artist, album, genre, track, etc.)
 * Transcribe spoken audio
-* Detect the language of speech in the file
-* Estimate mood/genre using machine learning models
+* Identify the language of speech using Whisper
 * Provide API-based or script-based access (usable from Laravel, Python CLI, etc.)
 
 This can serve as a full-fledged **AI/ML Capstone Study Project** for:
 
 * Audio signal processing
-* Machine learning in audio understanding
+* AI/ML audio understanding (Whisper transcription)
 * Full-stack Python + Web (Laravel) integration
 
 ---
@@ -45,7 +49,7 @@ pip install -r requirements.txt
 **OR manually:**
 
 ```bash
-pip install mutagen openai-whisper langdetect pycountry requests rich
+pip install mutagen openai-whisper pycountry requests rich
 ```
 
 For FFmpeg (used by Whisper and audio probing):
@@ -71,13 +75,12 @@ sudo apt install ffmpeg
 
 ## 🧠 AI / ML Models Used
 
-| Feature            | Model / Tool                                     | Description                                       |
-| ------------------ | ------------------------------------------------ | ------------------------------------------------- |
-| Transcription      | OpenAI Whisper                                   | Converts speech to text                           |
-| Language Detection | `langdetect`                                     | Predicts language from transcribed text           |
-| Mood Detection     | Scikit-learn or AudioSet pretrained classifier   | Classifies emotion/genre based on audio signature |
-| Metadata Handling  | Mutagen (ID3)                                    | Reads/Writes metadata in MP3 files                |
-| Malware Check      | Optional via open-source VirusTotal alternatives |                                                   |
+| Feature            | Model / Tool                                     | Description                            |
+| ------------------ | ------------------------------------------------ | -------------------------------------- |
+| Transcription      | OpenAI Whisper                                   | Converts speech to text                |
+| Language Detection | Whisper (built-in)                               | Predicts language during transcription |
+| Metadata Handling  | Mutagen (ID3)                                    | Reads/Writes metadata in MP3 files     |
+| Malware Check      | Optional via open-source VirusTotal alternatives |                                        |
 
 ---
 
@@ -94,7 +97,7 @@ This project can be submitted as a **capstone or thesis project** in the followi
 **Unique Qualifiers:**
 
 * Real-world applicability (transcription, tagging, malware scanning)
-* Integrates AI (Whisper, mood classification)
+* Integrates AI (Whisper-based transcription and language classification)
 * Usable in production (via Laravel or Python CLI)
 
 ---
@@ -102,7 +105,7 @@ This project can be submitted as a **capstone or thesis project** in the followi
 ## 📈 Future Enhancements
 
 * Speaker recognition
-* Genre clustering with deep learning (VGGish)
+* Genre/mood detection model integration
 * Web frontend with preview and tagging interface
 * Batch processing via drag-and-drop
 
