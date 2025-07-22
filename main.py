@@ -166,9 +166,9 @@ if __name__ == "__main__":
 
     # the json file where the output must be stored
 
-    # out_file = open("output.json", "w")
+    out_file = open("output.json", "w")
 
-    # print(json.dump(clean_for_json(metadata), out_file, indent = 6))
+    print(json.dump(clean_for_json(metadata), out_file, indent = 6))
 
-    # out_file.close()    
+    out_file.close()    
 

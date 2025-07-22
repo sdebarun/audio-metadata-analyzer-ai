@@ -108,6 +108,7 @@ This project can be submitted as a **capstone or thesis project** in the followi
 * Genre/mood detection model integration
 * Web frontend with preview and tagging interface
 * Batch processing via drag-and-drop
+* complete .env based credential handling
 
 ---
 

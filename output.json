@@ -1,11 +1,26 @@
 {
       "basic": {
             "tags": {
+                  "album": [
+                        "Sample Album"
+                  ],
+                  "title": [
+                        "Sample Audio"
+                  ],
+                  "artist": [
+                        "Sample Artist"
+                  ],
+                  "tracknumber": [
+                        "1"
+                  ],
+                  "genre": [
+                        "pop "
+                  ],
                   "date": [
-                        "2018"
+                        "2019"
                   ]
             },
-            "info": "<mutagen.mp3.MPEGInfo object at 0x107420830>"
+            "info": "<mutagen.mp3.MPEGInfo object at 0x10baa58e0>"
       },
       "technical": {
             "programs": [],
@@ -13,29 +28,29 @@
             "streams": [
                   {
                         "sample_rate": "44100",
-                        "channels": 2,
-                        "bit_rate": "139529"
-                  }
+                        "channels": 1,
+                        "bit_rate": "64000"
+                  },
+                  {}
             ],
             "format": {
-                  "duration": "42.057143"
+                  "duration": "15.046531"
             }
       },
-      "cover_art_path": null,
+      "cover_art_path": "samples/tagmp3_sample_enriched.mp3_cover.jpg",
       "genre_mood_analysis": {
-            "tempo": [
-                  95.703125
-            ],
+            "tempo": 0.0,
             "mood": "calm",
             "genre_estimate": "acoustic",
-            "spectral_centroid_mean": 442.25339023021206,
-            "zero_crossing_rate_mean": 0.03420558529005525
+            "spectral_centroid_mean": 443.4328951976994,
+            "zero_crossing_rate_mean": 0.03984631990131579
       },
       "malware_scan": {
             "status": "VirusTotal API key not set."
       },
       "transcription": {
-            "language": "ro"
+            "text": "",
+            "language": "en"
       },
-      "language_detected": "Romanian"
+      "language_detected": "English"
 }
