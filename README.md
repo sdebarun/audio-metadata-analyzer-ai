@@ -24,3 +24,5 @@ you can see the requirement txt file to know more.
     if windows use `bin/activate`
 3. then run python main.py `<file name>`
 4. to deactivate the virtual environment  `deactivate`   
+
+**NB:** I am still refactoring and optimizing it.
