@@ -2,25 +2,31 @@
       "basic": {
             "tags": {
                   "album": [
-                        "Sample Album"
+                        "Mitron"
+                  ],
+                  "composer": [
+                        "Lijo George, Dj Chetas"
+                  ],
+                  "copyright": [
+                        "Sony Music Entertainment India Pvt. Ltd."
                   ],
                   "title": [
-                        "Sample Audio"
+                        "Kamariya"
                   ],
                   "artist": [
-                        "Sample Artist"
+                        "Lijo George, Dj Chetas, Darshan Raval"
                   ],
-                  "tracknumber": [
-                        "1"
+                  "albumartist": [
+                        "Lijo George, Dj Chetas, Darshan Raval"
                   ],
                   "genre": [
-                        "pop "
+                        "Bollywood"
                   ],
                   "date": [
-                        "2019"
+                        "2018"
                   ]
             },
-            "info": "<mutagen.mp3.MPEGInfo object at 0x10baa58e0>"
+            "info": "<mutagen.mp3.MPEGInfo object at 0x108159400>"
       },
       "technical": {
             "programs": [],
@@ -28,29 +34,31 @@
             "streams": [
                   {
                         "sample_rate": "44100",
-                        "channels": 1,
-                        "bit_rate": "64000"
+                        "channels": 2,
+                        "bit_rate": "128000"
                   },
                   {}
             ],
             "format": {
-                  "duration": "15.046531"
+                  "duration": "251.689796"
             }
       },
-      "cover_art_path": "samples/tagmp3_sample_enriched.mp3_cover.jpg",
+      "cover_art_path": "samples/hindi1.mp3_cover.jpg",
       "genre_mood_analysis": {
-            "tempo": 0.0,
-            "mood": "calm",
-            "genre_estimate": "acoustic",
-            "spectral_centroid_mean": 443.4328951976994,
-            "zero_crossing_rate_mean": 0.03984631990131579
+            "tempo": [
+                  123.046875
+            ],
+            "mood": "energetic",
+            "genre_estimate": "electronic",
+            "spectral_centroid_mean": 2776.2267496662744,
+            "zero_crossing_rate_mean": 0.13285899010517577
       },
       "malware_scan": {
             "status": "VirusTotal API key not set."
       },
       "transcription": {
-            "text": "",
-            "language": "en"
+            "text": " Du hala tongi mad\u54c1 Caam Ji prenda Caam Ji prenda Caam Ji prenda\u821e mantra\u4ebaayan step asikAUDIENCE\u8cb8\uce58\ub9cc, mango  Stock Bro, my chega\u7edd Najile, Sabe Appu ni be wo s\u00e9 hai Reddu bali \u0902\u0930 yarayan \u090e \u0907 \u092a \u092a \u092a \u0915\u092e \u092e\u0930\u822c \u092a Brenda ..\u8ff7\ub294 karatari kamarya ..\u8ff7\ub294 karatari kamarya ..\u8ff7\ub294 karatari kamarya ..\u8ff7\ub294 karatari kamarya ..\u8ff7\ub294 karatari kamarya ..\u8ff7\ub294 karatari kamarya ..suaju ..galk ..eachalavi repagandne ..suresh sisi ka ..vanda vada ayah ..killa nekiliya sangadaniya ..bilaya ..delmi bhi bhi girl ..what this your name is ..perlina sarmya uka ya ..he putsi prinachya ..hacidate ekapar ..hattu me lege hata ..hama nu kamarya ..\u8ff7\ub294 karatari kamarya ..\u8ff7\ub294 karatari kamarya ..suresh sisi ka ..suresh sisi ka ..vanda vada ayah ..suresh sisi ka ..suresh sisi ka ..suresh sisi ka ..suresh sisi ka ..suresh sisi ka . . ..sim mister ..meshe ..suresh sisi ka ..suresh sisi ka ...suresh sisi ka ..meshe\u96c5 presenter\u2026 commodities\u2026 P karma sol Airport securities",
+            "language": "hi"
       },
-      "language_detected": "English"
+      "language_detected": "Hindi"
 }
